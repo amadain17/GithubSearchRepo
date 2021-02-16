@@ -12,7 +12,7 @@ import static org.apache.http.HttpStatus.SC_OK;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertTrue;
 
-public class GithubMostStarred extends BaseTest {
+public class GithubMostStarredTest extends BaseTest {
     private final static int NUMBER_OF_RESULTS = 100;
 
     @Test
