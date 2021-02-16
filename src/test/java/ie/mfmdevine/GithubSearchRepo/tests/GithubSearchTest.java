@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.HashMap;
+import java.util.List;
 
 import static ie.mfmdevine.GithubSearchRepo.util.Consts.ITEMS;
 import static io.restassured.RestAssured.given;
@@ -35,10 +36,11 @@ public class GithubSearchTest extends BaseTest{
                 .queryParam("q", query+"+language:"+language)
                 .when().get()
                 .then().statusCode(SC_OK).extract().response();
+        List<HashMap> results = response.getBody().jsonPath().getList(ITEMS);
 
-        for (Object item: response.getBody().jsonPath().getList(ITEMS)) {
-            softly.assertThat(((HashMap)item).get("language")).isEqualTo(responseLang);
-            String description = (String) ((HashMap)item).get("description");
+        for (HashMap item: results) {
+            softly.assertThat(item.get("language")).isEqualTo(responseLang);
+            String description = (String) item.get("description");
             softly.assertThat(description.toLowerCase()).containsSequence(query);
         }
         softly.assertAll();

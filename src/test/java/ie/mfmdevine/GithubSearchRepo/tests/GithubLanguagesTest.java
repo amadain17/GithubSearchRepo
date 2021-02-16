@@ -37,11 +37,11 @@ public class GithubLanguagesTest extends BaseTest{
                 .queryParam("q", String.format("language:%s created:>%s", lang.toLowerCase(), creationDate))
                 .when().get()
                 .then().statusCode(SC_OK).extract().response();
-        List<Object> results = response.getBody().jsonPath().getList(ITEMS);
+        List<HashMap> results = response.getBody().jsonPath().getList(ITEMS);
 
-        for (Object item : results) {
-            assertThat(((HashMap) item).get("language")).isEqualTo(lang);
-            Date d = getDateFromIsoString((CharSequence) ((HashMap) item).get("created_at"));
+        for (HashMap item : results) {
+            assertThat(item.get("language")).isEqualTo(lang);
+            Date d = getDateFromIsoString((CharSequence) item.get("created_at"));
             assertThat(d).isAfter(previousDate);
         }
     }

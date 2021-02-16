@@ -24,21 +24,21 @@ public class GithubReposPerUserTest extends BaseTest{
                 .queryParam("order", "asc")
                 .when().get()
                 .then().statusCode(SC_OK).extract().response();
-        List<Object> results = response.getBody().jsonPath().getList(ITEMS);
+        List<HashMap> results = response.getBody().jsonPath().getList(ITEMS);
 
         boolean firsttime = true;
         int number = 0;
 
-        for (Object item : results) {
+        for (HashMap item : results) {
             HashMap<String, String> owner = (HashMap<String, String>) ((HashMap) item).get("owner");
             assertThat((owner.get("login"))).isEqualTo(USER.split(":")[1]);
 
             if (firsttime) {
-                number = (int) ((HashMap)item).get("stargazers_count");
+                number = (int) item.get("stargazers_count");
                 firsttime = false;
                 continue;
             }
-            int nextNum = (int) ((HashMap)item).get("stargazers_count");
+            int nextNum = (int) item.get("stargazers_count");
             assertTrue(String.format("Number of stars %s should be greater than or equal to %s", nextNum, number), nextNum>=number);
             number = nextNum;
 
