@@ -23,7 +23,8 @@ public class GithubSearchTest extends BaseTest{
         return new Object[][] {
                 {"tetris", "java", "Java"},
                 {"snake", "ruby", "Ruby"},
-                {"space", "python", "Python"}
+                {"space", "python", "Python"},
+                {"pacman", "assembly", "Assembly"}
         };
     }
 
