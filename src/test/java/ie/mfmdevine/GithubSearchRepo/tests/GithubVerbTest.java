@@ -3,10 +3,7 @@ package ie.mfmdevine.GithubSearchRepo.tests;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
-import io.restassured.response.Response;
-import org.assertj.core.api.SoftAssertions;
 import org.junit.Test;
-import org.junit.runner.Request;
 import org.junit.runner.RunWith;
 
 import static io.restassured.RestAssured.given;

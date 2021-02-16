@@ -7,10 +7,9 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.time.Instant;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.TemporalAccessor;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 import static ie.mfmdevine.GithubSearchRepo.util.Consts.ITEMS;
 import static ie.mfmdevine.GithubSearchRepo.util.DateUtils.getDateFromIsoString;
@@ -45,6 +44,5 @@ public class GithubLanguagesTest extends BaseTest{
             assertThat(d).isAfter(previousDate);
         }
     }
-
 }
 
