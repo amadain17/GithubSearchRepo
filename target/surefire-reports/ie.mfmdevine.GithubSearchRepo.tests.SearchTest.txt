@@ -1,0 +1,29 @@
+-------------------------------------------------------------------------------
+Test set: ie.mfmdevine.GithubSearchRepo.tests.SearchTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 4.394 s <<< FAILURE! - in ie.mfmdevine.GithubSearchRepo.tests.SearchTest
+testSearchQuery_invaders_ruby(ie.mfmdevine.GithubSearchRepo.tests.SearchTest)  Time elapsed: 1.153 s  <<< FAILURE!
+org.assertj.core.api.SoftAssertionError: 
+
+The following 3 assertions failed:
+1) 
+Expecting:
+ <"ikamusume invades ruby">
+to contain:
+ <"invaders"> 
+at SearchTest.testSearchQuery(SearchTest.java:41)
+2) 
+Expecting:
+ <"invader">
+to contain:
+ <"invaders"> 
+at SearchTest.testSearchQuery(SearchTest.java:41)
+3) 
+Expecting:
+ <"rails-invader">
+to contain:
+ <"invaders"> 
+at SearchTest.testSearchQuery(SearchTest.java:41)
+
+	at ie.mfmdevine.GithubSearchRepo.tests.SearchTest.testSearchQuery(SearchTest.java:43)
+
