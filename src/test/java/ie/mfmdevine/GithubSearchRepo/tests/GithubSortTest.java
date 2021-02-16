@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.junit.Assert.assertTrue;
 
-public class SortTest extends BaseTest {
+public class GithubSortTest extends BaseTest {
 
     @Test
     public void testSortResultsQueryDesc() {

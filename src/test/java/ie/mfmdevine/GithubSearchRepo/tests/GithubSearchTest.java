@@ -15,7 +15,7 @@ import static io.restassured.RestAssured.given;
 import static org.apache.http.HttpStatus.SC_OK;
 
 @RunWith(DataProviderRunner.class)
-public class SearchTest extends BaseTest{
+public class GithubSearchTest extends BaseTest{
 
     @DataProvider(format = "%m_%p[0]_%p[1]")
     public static Object[] queryParamsProvider() {
