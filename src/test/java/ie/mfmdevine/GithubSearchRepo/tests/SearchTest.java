@@ -21,8 +21,8 @@ public class SearchTest extends BaseTest{
     public static Object[] queryParamsProvider() {
         return new Object[][] {
                 {"tetris", "java", "Java"},
-                {"snake", "python", "Python"},
-                {"invaders", "ruby", "Ruby"}
+                {"snake", "ruby", "Ruby"},
+                {"space", "python", "Python"}
         };
     }
 
