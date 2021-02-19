@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class GithubSearchRepo {
 
-	public static void main(String[] args) {
-		SpringApplication.run(GithubSearchRepo.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(GithubSearchRepo.class, args);
+  }
 
 }
